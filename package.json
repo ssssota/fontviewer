@@ -1,0 +1,27 @@
+{
+  "name": "fontviewer",
+  "version": "0.1.0",
+  "description": "Fontviewer",
+  "main": "index.js",
+  "author": "Sotaro Tommykawa",
+  "license": "MIT",
+  "dependencies": {
+    "font-manager": "^0.3.0",
+    "color-convert": "^1.9.3"
+  },
+  "devDependencies": {
+    "electron-rebuild": "^1.8.2",
+    "electron": "^3.0.10",
+    "electron-builder": "^20.38.2"
+  },
+  "scripts": {
+    "start": "electron . --debug",
+    "build": "electron-builder",
+    "build:mac": "electron-builder --mac --x64",
+    "build:windows": "electron-builder --win --x64",
+    "build:linux": "electron-builder --linux --x64"
+  },
+  "build": {
+    "appId": "com.ssssota.fontviewer"
+  }
+}

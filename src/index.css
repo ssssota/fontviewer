@@ -1,0 +1,143 @@
+/* Clear style */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+div, menu, h1, h2, h3, p {
+    padding: 0;
+    margin: 0;
+}
+input {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 0px;
+    border-bottom: 1px #ccc solid;
+    font-size: 1.25em;
+    transition: all 0.1s;
+}
+input:focus {
+    outline: 0;
+    border-bottom-color: #333;
+}
+input[type="range"] {
+    height: 1px;
+}
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    background: #333;
+    border: white solid 2px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+input[type="range"]:hover::-webkit-slider-thumb {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Main style */
+.setting {
+    position: fixed;
+    width: 100%;
+    min-height: 3.5em;
+    background: #fff;
+    border-bottom: 1px solid #999;
+    box-shadow: 0px 1px 5px 0px;
+    user-select: none;
+}
+    .setting h1 {
+        margin: 0.25em;
+        display: inline-block;
+    }
+    .setting p {
+        margin: 0.5em;
+    }
+    .setting .right {
+        float: right;
+        display: flex;
+    }
+        .setting .right p {
+            margin-top: 1em;
+        }
+            .setting .right p input {
+                width: 8em;
+            }
+            .setting .right p .more-btn {
+                display: block;
+                background-image: url('./baseline-keyboard_arrow_down-24px.svg');
+                width: 30px;
+                height: 30px;
+                transition: all 0.2s;
+            }
+            .setting .right p .more-btn.opened {
+                transform: rotateX(180deg);
+            }
+    .setting .menu {
+        height: 0;
+        overflow: hidden;
+        transition: all 0.1s;
+        clear: both;
+
+        /* Flex setting */
+        display: flex;
+        flex-wrap: wrap;
+    }
+        .setting .menu .color-selector {}
+            .setting .menu .red {
+                color: red;
+            }
+                .setting .menu .red .color-slider {
+                    background: red;
+                }
+                .setting .menu .red .color-number {
+                    border-bottom-color: red;
+                }
+            .setting .menu .green {
+                color: green;
+            }
+                .setting .menu .green .color-slider {
+                    background: green;
+                }
+                .setting .menu .green .color-number {
+                    border-bottom-color: green;
+                }
+            .setting .menu .blue {
+                color: blue;
+            }
+                .setting .menu .blue .color-slider {
+                    background: blue;
+                }
+                .setting .menu .blue .color-number {
+                    border-bottom-color: blue;
+                }
+
+.container {
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 4em;
+}
+    .container .fontlist {
+
+        /* Flex setting */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+        .fontlist .font {
+            min-height: 5em;
+            margin: 0.1em;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            box-shadow: 1px 1px 1px 0px;
+            border-radius: 3px;
+            text-align: center;
+        }
+            .fontlist .font .text {
+                margin: 0.1em;
+                font-size: 30px;
+            }

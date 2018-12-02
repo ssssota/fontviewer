@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fontviewer</title>
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="setting">
+        <h1>Fontviewer</h1>
+        <div class="right">
+            <p><input type="text" id="search" placeholder="Search fonts"></p>
+            <p><input type="text" id="text" placeholder="Text"></p>
+            <p><a href="#" id="moreBtn" class="more-btn"></a></p>
+        </div>
+        <menu class="menu" id="moreSetting">
+            <div class="bg-color color-selector">
+                <p>Background color <input type="color" id="bgColor" value="#ffffff"></p>
+                <p class="red"><input type="range" id="bgRedRange" class="color-slider" min="0" max="255" value="255"><input type="number" id="bgRed" class="color-number" min="0" max="255" value="255"></p>
+                <p class="green"><input type="range" id="bgGreenRange" class="color-slider" min="0" max="255" value="255"><input type="number" id="bgGreen" class="color-number" min="0" max="255" value="255"></p>
+                <p class="blue"><input type="range" id="bgBlueRange" class="color-slider" min="0" max="255" value="255"><input type="number" id="bgBlue" class="color-number" min="0" max="255" value="255"></p>
+            </div>
+            <div class="font-color color-selector">
+                <p>Font color <input type="color" id="fontColor" value="#000000"></p>
+                <p class="red"><input type="range" id="fontRedRange" class="color-slider" min="0" max="255" value="0"><input type="number" id="fontRed" class="color-number" min="0" max="255" value="0"></p>
+                <p class="green"><input type="range" id="fontGreenRange" class="color-slider" min="0" max="255" value="0"><input type="number" id="fontGreen" class="color-number" min="0" max="255" value="0"></p>
+                <p class="blue"><input type="range" id="fontBlueRange" class="color-slider" min="0" max="255" value="0"><input type="number" id="fontBlue" class="color-number" min="0" max="255" value="0"></p>
+            </div>
+            <div class="size">
+                <p>Font size <input type="number" id="fontSize" value="30" style="width: 3em;">px</p>
+            </div>
+        </menu>
+    </header>
+    <div class="container" id="container">
+        <div id="fontlist" class="fontlist"></div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
