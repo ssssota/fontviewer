@@ -8,6 +8,7 @@ const fonts = fontManager.getAvailableFontsSync().sort((a, b) => {
     if (A > B) return 1
     return 0
 })
+console.log(fonts)
 
 const $container = document.querySelector('#container')
 const $fontlist = document.querySelector('#fontlist')
@@ -35,15 +36,23 @@ const $fontGreen = document.querySelector('#fontGreen')
 const $fontBlue = document.querySelector('#fontBlue')
 const $fontSize = document.querySelector('#fontSize')
 const defaultText = '123 abc'
+let moreSettingHeight = 0
 
 // onDOMContentLoaded func also main func
 const onLoad = () => {
     for (let i = fonts.length-1, last = ''; i >= 0; i--) {
-        const current = fonts[i].family
-        if (last !== current) {
-            $fontlist.insertAdjacentHTML('afterbegin', `<div class="font" data-font="${current}"><div class="text" style="font-family: '${current}';">${defaultText}</div><div class="font-name">${current}</div></div>`)
-        }
-        last = current
+        const family = fonts[i].family
+        const weight = fonts[i].weight
+        const isItalic = fonts[i].italic
+        const style = fonts[i].style
+        const isCondensed = !!(style.match(/Condensed/))
+        const isOblique = !!(style.match(/Oblique/))
+        $fontlist.insertAdjacentHTML('afterbegin', 
+`<div class="font" data-font="${family} ${style}">
+    <div class="text" style="font-family: '${family}'; font-weight: ${weight}; font-style: ${(isItalic)?'italic':''} ${(isOblique)?'oblique':''}; font-stretch: ${(isCondensed)?'condensed':''};">${defaultText}</div>
+    <div class="font-name">${family} ${style}</div>
+</div>`
+        )
     }
 
     // register listener
@@ -71,6 +80,11 @@ const onLoad = () => {
     $fontBlue.addEventListener('change', changeFontColor)
 
     $fontSize.addEventListener('change', changeFontSize)
+
+    setTimeout(() => {
+        moreSettingHeight = $moreSetting.clientHeight
+        moreToggle()
+    }, 1)
 }
 
 // search font
@@ -98,7 +112,7 @@ const onTextChange = () => {
 }
 
 // open/close setting menu
-let moreOpened = false
+let moreOpened = true
 const moreToggle = () => {
     // 画面上部に勝手に戻る問題を無理やり解決
     const y = window.scrollY
@@ -106,7 +120,7 @@ const moreToggle = () => {
     //window.scroll(0,y)
 
     if (moreOpened = !moreOpened) {
-        $moreSetting.style.height = '10.5em'
+        $moreSetting.style.height = `${moreSettingHeight + 5}px`
         $container.addEventListener('click', moreToggle)
         $moreBtn.classList.add('opened')
     } else {

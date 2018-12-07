@@ -77,7 +77,6 @@ input[type="range"]:hover::-webkit-slider-thumb {
                 transform: rotateX(180deg);
             }
     .setting .menu {
-        height: 0;
         overflow: hidden;
         transition: all 0.1s;
         clear: both;
@@ -129,15 +128,22 @@ input[type="range"]:hover::-webkit-slider-thumb {
         justify-content: center;
     }
         .fontlist .font {
+            display: inline-block;
+            flex-grow: 1;
             min-height: 5em;
             margin: 0.1em;
             padding: 0.5em;
             border: 1px solid #ccc;
-            box-shadow: 1px 1px 1px 0px;
+            /* box-shadow: 1px 1px 1px 0px; */
             border-radius: 3px;
             text-align: center;
         }
             .fontlist .font .text {
+                height: 80%;
                 margin: 0.1em;
                 font-size: 30px;
+            }
+            .fontlist .font .font-name {
+                color: #999;
+                font-size: 0.8em;
             }
