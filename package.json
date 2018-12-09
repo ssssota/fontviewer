@@ -15,7 +15,9 @@
     "electron-builder": "^20.38.2"
   },
   "scripts": {
-    "start": "electron . --debug",
+    "start": "electron .",
+    "debug": "electron . --debug",
+    "rebuild-lib": "electron-rebuild",
     "build": "electron-builder",
     "build:mac": "electron-builder --mac --x64",
     "build:windows": "electron-builder --win --x64",

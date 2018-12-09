@@ -10,7 +10,7 @@ const createWindow = () => {
         'height': 720,
         'minWidth': 640,
         'minHeight': 360,
-        'icon': './src/icon.png'
+        'icon': './src/icon256.png'
     })
     window.loadFile('src/index.html')
     if (process.argv[2] === '--debug') window.webContents.openDevTools()
