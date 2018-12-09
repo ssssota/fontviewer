@@ -24,6 +24,9 @@
     "build:linux": "electron-builder --linux --x64"
   },
   "build": {
-    "appId": "com.ssssota.fontviewer"
+    "appId": "com.ssssota.fontviewer",
+    "win": {
+      "target": "portable"
+    }
   }
 }
