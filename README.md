@@ -53,7 +53,7 @@ npm run build:mac
 # build for windows
 npm run build:windows
 
-#build for linux
+# build for linux
 npm run build:linux
 ```
 

@@ -1,14 +1,7 @@
 const convert = require('color-convert')
 const fontManager = require('font-manager')
 // get all of the fonts
-const fonts = fontManager.getAvailableFontsSync().sort((a, b) => {
-    const A = a.family.toUpperCase()
-    const B = b.family.toUpperCase()
-    if (A < B) return -1
-    if (A > B) return 1
-    return 0
-})
-console.log(fonts)
+let fonts
 
 const $container = document.querySelector('#container')
 const $fontlist = document.querySelector('#fontlist')
@@ -40,7 +33,16 @@ let moreSettingHeight = 0
 
 // onDOMContentLoaded func also main func
 const onLoad = () => {
-    for (let i = fonts.length-1, last = ''; i >= 0; i--) {
+    fonts = fontManager.getAvailableFontsSync().sort((a, b) => {
+        const A = a.family.toUpperCase()
+        const B = b.family.toUpperCase()
+        if (A < B) return -1
+        if (A > B) return 1
+        return 0
+    })
+    console.log(fonts)
+
+    for (let i = fonts.length-1; i >= 0; i--) {
         const family = fonts[i].family
         const weight = fonts[i].weight
         const isItalic = fonts[i].italic
