@@ -128,7 +128,6 @@ input[type="range"]:hover::-webkit-slider-thumb {
         justify-content: center;
     }
         .fontlist .font {
-            display: inline-block;
             flex-grow: 1;
             min-height: 5em;
             margin: 0.1em;
@@ -137,6 +136,9 @@ input[type="range"]:hover::-webkit-slider-thumb {
             /* box-shadow: 1px 1px 1px 0px; */
             border-radius: 3px;
             text-align: center;
+        }
+        .fontlist .font.hide-font {
+            display: none;
         }
             .fontlist .font .text {
                 height: 80%;

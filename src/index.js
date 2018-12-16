@@ -94,13 +94,15 @@ const searchFont = () => {
     const searchString = $search.value.trim().toUpperCase()
     if (searchString === '') {
         document.querySelectorAll('.font').forEach(elem => {
-            elem.style.display = 'block'
+            elem.classList.remove('hide-font')
         })
     } else {
         document.querySelectorAll('.font').forEach(elem => {
-            elem.style.display = (elem.dataset.font.toUpperCase().indexOf(searchString) === -1)?
-                'none':
-                'block'
+            if (elem.dataset.font.toUpperCase().indexOf(searchString) === -1) {
+                elem.classList.add('hide-font')
+            } else {
+                elem.classList.remove('hide-font')
+            }
         })
     }
 }
