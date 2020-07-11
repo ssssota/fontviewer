@@ -1,5 +1,8 @@
 # ![Fontviewer](./src/icon32.png) Fontviewer
 
+**💥This repository is deprecated!💥**
+**Check new [fontviewer](https://fontvuer.netlify.app)!**
+
 ![Screenshot](./Screenshot.png)
 
 You can check and search fonts you have.
