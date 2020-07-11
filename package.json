@@ -10,7 +10,7 @@
     "color-convert": "^1.9.3"
   },
   "devDependencies": {
-    "electron": "^3.0.10",
+    "electron": "^7.2.4",
     "electron-builder": "^20.40.2",
     "electron-rebuild": "^1.8.4"
   },
